@@ -48,10 +48,7 @@
                     <!-- Las cards se inyectan aquí -->
                 </div>
 
-                <!-- Botón Ver más (opcional) -->
-                <div class="flex justify-center mt-10">
-                    <a href="#" class="font-[Bungee] bg-zinc-900 p-4 rounded-lg hover:bg-zinc-800 hover:scale-110 transition-all">Ver más</a>
-                </div>
+                
             </div>
         </section>
     </main>
@@ -62,10 +59,42 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-zinc-950 py-6">
-        <div class="container mx-auto px-4 text-center opacity-50">
+    <footer class="bg-zinc-950 pt-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Sobre mí -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Sobre mí</h4>
+                <p class="text-sm opacity-70">Soy diseñador y estudiante de informática. Me encanta crear interfaces
+                    limpias y experiencias intuitivas.</p>
+            </div>
+            <!-- Enlaces -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Enlaces</h4>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                    <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Redes -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Redes</h4>
+                <ul class="flex space-x-4">
+                    <li><a href="https://x.com/Noiryshi" class="hover:text-red-500">X (twitter) </a></li>
+                    <li><a href="https://wa.me/qr/OBXFV6QITPMLK1" class="hover:text-red-500">Whatsapp</a></li>
+                </ul>
+            </div>
+            <!-- Contacto rápido -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Contacto</h4>
+                <p class="text-sm opacity-70">mrnoiry@gmail.com</p>
+            </div>
+        </div>
+        <div class="text-center opacity-50 mt-6">
             © 2025 Alex Pérez. Todos los derechos reservados.
         </div>
+
+        <img src="Assets/img/end (1).png" class="block md:hidden">
+
     </footer>
 
     <!-- Script jQuery para cargar imágenes y manejar lightbox -->
@@ -87,9 +116,6 @@
               const $card = $(
                 `<div class="mb-4 break-inside-avoid bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
                    <img src="${src}" alt="${filename}" class="w-full h-auto object-cover">
-                   <div class="p-4">
-                     <h3 class="text-lg font-bold mb-1">${filename}</h3>
-                   </div>
                  </div>`
               );
               $card.find('img')
