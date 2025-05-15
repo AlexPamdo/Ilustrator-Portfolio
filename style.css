@@ -1,0 +1,7 @@
+.shadow-navbar{
+    box-shadow: -3px 7px 50px 30px rgb(9 9 11);
+}
+
+.shadow-draw{
+    box-shadow: inset 1px 1px 50px 30px rgb(0 0 0);
+}

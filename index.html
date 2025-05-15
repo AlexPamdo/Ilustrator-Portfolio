@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <title>Portfolio Alex Pérez</title>
+</head>
+
+<body class="bg-zinc-900 text-white flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <header class="">
+
+        <!-- NAVBAR -->
+        <nav class="p-4 bg-zinc-950 shadow-navbar flex gap-x-8 font-semibold justify-center">
+            <a href="#" class="group">
+                <span
+                    class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-shadow duration-300 ease-out">Inicio</span>
+            </a>
+            <a href="#" class="group">
+                <span
+                    class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-shadow duration-300 ease-out">Portafolio</span>
+            </a>
+            <a href="#" class="group">
+                <span
+                    class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-shadow duration-300 ease-out">Contacto</span>
+            </a>
+        </nav>
+
+        <!-- CONTENIDO -->
+        <div class="container mx-auto relative flex flex-col md:flex-row items-center justify-evenly px-4 pt-16 
+                bg-[url('Assets/img/imgHeader.png')] bg-cover bg-center 
+                md:bg-none text-white">
+
+            <!-- OVERLAY oscuro SOLO en móvil -->
+            <div class="absolute inset-0 bg-black/50 md:hidden"></div>
+
+            <!-- TEXTO -->
+            <div class="z-10 md:w-1/2 text-center md:text-left p-6 rounded md:p-0">
+                <h2 class="text-xl md:text-2xl opacity-70">MI NOMBRE ES</h2>
+                <h1 class="font-[Bungee] text-4xl md:text-6xl mt-2">ALEX PÉREZ</h1>
+                <h3 class="bg-red-900 inline-block px-3 py-1 mt-4 rounded font-semibold">DISEÑADOR / ILUSTRADOR</h3>
+            </div>
+
+            <!-- IMAGEN SOLO EN DESKTOP -->
+            <div class="hidden md:block md:w-1/2">
+                <img src="Assets/img/imgHeader.png" alt="Foto de Alex Pérez"
+                    class="w-full h-auto object-cover rounded" />
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+    <main class="flex-1">
+        <!-- Sección de Portafolio -->
+        <section id="portfolio" class=" bg-red-800 py-12 shadow-lg">
+            <div class="container mx-auto px-4">
+                <h2 class="font-[Bungee] text-3xl mb-6 text-center">MIS TRABAJOS</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/proyecto1.jpg" alt="Proyecto 1" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Retrato de Guilman</h3>
+                            <p class="text-sm opacity-70">Personaje de warhamer 40k pintado con un estilo oleo.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/proyecto2.jpg" alt="Proyecto 2" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">FanArt de Zuko</h3>
+                            <p class="text-sm opacity-70">Ilustracion realizada sobre el personaje de avatar Zuko.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/proyecto3.jpg" alt="Proyecto 3" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Ilustracion para cancion</h3>
+                            <p class="text-sm opacity-70">Ilustracion realizada a pedido de un artista para usarla como
+                                pordatada en una cancion.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/ropa (1).png" alt="Proyecto 4" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Proyecto Tres</h3>
+                            <p class="text-sm opacity-70">Descripción breve del proyecto, sus retos y tecnologías
+                                usadas.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/ropa (2).png" alt="Proyecto 4" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Proyecto Tres</h3>
+                            <p class="text-sm opacity-70">Descripción breve del proyecto, sus retos y tecnologías
+                                usadas.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/ropa (3).png" alt="Proyecto 4" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Proyecto Tres</h3>
+                            <p class="text-sm opacity-70">Descripción breve del proyecto, sus retos y tecnologías
+                                usadas.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/diseño (1).jpg" alt="Proyecto 4" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Proyecto Tres</h3>
+                            <p class="text-sm opacity-70">Descripción breve del proyecto, sus retos y tecnologías
+                                usadas.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/diseño (2).jpg" alt="Proyecto 4" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Proyecto Tres</h3>
+                            <p class="text-sm opacity-70">Descripción breve del proyecto, sus retos y tecnologías
+                                usadas.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/diseño (3).png" alt="Proyecto 4" class="w-full h-50 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Proyecto Tres</h3>
+                            <p class="text-sm opacity-70">Descripción breve del proyecto, sus retos y tecnologías
+                                usadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="py-16 bg-z-800 px-4 text-white ">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+
+                <!-- Imagen o ilustración (opcional) -->
+                <div class="w-full md:w-1/2 h-full flex justify-center">
+                    <img src="Assets/img/sobreMi.png" alt="Ilustración de Alex Pérez" class="rounded-lg " />
+                </div>
+
+                <!-- Texto -->
+                <div class="w-full md:w-1/2 ">
+                    <h2 class="font-[Bungee] text-4xl mb-4 text-red-500">Sobre mí</h2>
+                    <p class="text-lg leading-relaxed mb-4 text-zinc-200">
+                        ¡Hola! Soy <span class="font-semibold text-white">Alex Pérez</span>, un apasionado dibujante e
+                        ilustrador digital
+                        con una obsesión por los detalles y la creatividad explosiva. Me encanta crear personajes con
+                        alma, mundos visuales con atmósfera
+                        y contar historias a través del arte.
+                    </p>
+                    <p class="text-zinc-400">
+                        He trabajado en estilos variados, desde ilustración para videojuegos hasta proyectos personales
+                        conceptuales. Domino herramientas como <span class="text-white font-medium">Photoshop,
+                            Illustrator, Krita y Clip Studio Paint</span>, lo que me permite adaptarme a distintos
+                        flujos de trabajo y estilos.
+                    </p>
+
+                    <h3 class="text-xl mt-8 mb-2 font-bold">Habilidades</h3>
+                    <ul class="list-disc list-inside text-zinc-300">
+                        <li>Dibujo digital e ilustración conceptual</li>
+                        <li>Manejo avanzado de Photoshop e Illustrator</li>
+                        <li>Experiencia con Krita y Clip Studio Paint</li>
+                        <li>Diseño de personajes y ambientaciones</li>
+                    </ul>
+
+                    <h3 class="text-xl mt-8 mb-2 font-bold">Programas</h3>
+                    <div class="flex justify-evenly  p-4 rounded-lg">
+                        <img src="Assets/img/photoshop.png" class="h-20" alt="">
+                        <img src="Assets/img/Adobe_Illustrator_CC_icon.svg.png" class="h-20" alt="">
+                        <img src="Assets/img/ee8GjOdx7E-lS3BBKz13LNFjTiq_SS0Ag-NpyHUJLS3iWKbGRDXhtXZz6E1TNTWX7JMw240-h480-rw.jpg"
+                            class="h-20 rounded" alt="">
+                        <img src="Assets/img/Calligrakrita-base.svg.png" class="h-20" alt="">
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="relative  overflow-hidden">
+
+            <!-- Fondo con imagen -->
+            <img src="Assets/img/end (1).png" alt=""
+                class=" shadow-draw mx-auto absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0" />
+
+            <!-- Contenido encima de la imagen -->
+            <div class="relative z-10 mt-16 mb-12">
+                <h2 class="font-[Bungee] text-3xl mb-6 text-center">¡Hablemos!</h2>
+                <form class="max-w-lg mx-auto bg-zinc-800/90 p-6 rounded-lg shadow-md backdrop-blur-sm">
+                    <div class="mb-4">
+                        <label for="name" class="block mb-1">Nombre</label>
+                        <input type="text" id="name"
+                            class="w-full px-3 py-2 rounded bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-900"
+                            placeholder="Tu nombre" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block mb-1">Email</label>
+                        <input type="email" id="email"
+                            class="w-full px-3 py-2 rounded bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-900"
+                            placeholder="tu@ejemplo.com" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block mb-1">Mensaje</label>
+                        <textarea id="message" rows="4"
+                            class="w-full px-3 py-2 rounded bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-red-900"
+                            placeholder="¿En qué puedo ayudarte?"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-red-900 hover:bg-red-800 transition-colors duration-300 px-6 py-2 rounded font-semibold mx-auto block">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 pt-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Sobre mí -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Sobre mí</h4>
+                <p class="text-sm opacity-70">Soy diseñador y estudiante de informática. Me encanta crear interfaces
+                    limpias y experiencias intuitivas.</p>
+            </div>
+            <!-- Enlaces -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Enlaces</h4>
+                <ul class="space-y-1">
+                    <li><a href="#portfolio" class="hover:underline">Portafolio</a></li>
+                    <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Redes -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Redes</h4>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-red-500">🐦 Twitter</a></li>
+                    <li><a href="#" class="hover:text-red-500">💼 LinkedIn</a></li>
+                    <li><a href="#" class="hover:text-red-500">📷 Instagram</a></li>
+                </ul>
+            </div>
+            <!-- Contacto rápido -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Contacto</h4>
+                <p class="text-sm opacity-70">alex.perez@example.com</p>
+                <p class="text-sm opacity-70">+1 234 567 890</p>
+            </div>
+        </div>
+        <div class="text-center opacity-50 mt-6">
+            © 2025 Alex Pérez. Todos los derechos reservados.
+        </div>
+
+        <img src="Assets/img/end (1).png" class="block md:hidden">
+
+    </footer>
+
+</body>
+
+</html>
