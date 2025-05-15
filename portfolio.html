@@ -37,45 +37,17 @@
         </div>
     </header>
 
-    <!-- GALERÍA -->
+    <!-- GALERÍA DINÁMICA -->
     <main class="flex-1">
         <section id="portfolio" class="py-12">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card Template -->
-                    <!-- Repite este bloque por cada proyecto -->
-                    <div
-                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-                        <img src="Assets/img/proyecto1.jpg" alt="Proyecto 1" class="w-full h-64 object-cover" />
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">Retrato de Guilman</h3>
-                            <p class="text-sm opacity-70">Personaje de Warhammer 40k pintado con un estilo óleo.</p>
-                        </div>
-                    </div>
+                <!-- Contenedor que será llenado dinámicamente -->
+                <div id="galeria" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
-                    <div
-                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-                        <img src="Assets/img/proyecto2.jpg" alt="Proyecto 2" class="w-full h-64 object-cover" />
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">FanArt de Zuko</h3>
-                            <p class="text-sm opacity-70">Ilustración realizada sobre el personaje de Avatar Zuko.</p>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-                        <img src="Assets/img/proyecto3.jpg" alt="Proyecto 3" class="w-full h-64 object-cover" />
-                        <div class="p-4">
-                            <h3 class="text-xl font-bold mb-2">Ilustración para Canción</h3>
-                            <p class="text-sm opacity-70">Ilustración a pedido de un artista para usarla como portada.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Agrega más tarjetas según necesites -->
+                <!-- Botón Ver más (opcional) -->
+                <div class="flex justify-center mt-10">
+                    <a href="#" class="font-[Bungee] bg-zinc-900 p-4 rounded-lg hover:bg-zinc-800 hover:scale-110 transition-all">Ver más</a>
                 </div>
-
-
             </div>
         </section>
     </main>
@@ -127,7 +99,8 @@
     </footer>
 
 
-    <script src="main.js"></script>
+     <!-- Script jQuery para cargar imágenes desde images.json -->
+     <script src="main.js"></script>
 </body>
 
 </html>
