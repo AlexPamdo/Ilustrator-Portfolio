@@ -1,10 +1,22 @@
 
-$(function () {
-    $.getJSON('images.json', function (images) {
+  $(function () {
+    console.log('🔄 Iniciando carga de images.json...');
+    $.getJSON('images.json')
+      .done(function (images) {
+        console.log('✅ images.json cargado:', images);
+
         const $gal = $('#galeria');
-        images.forEach(src => {
-            const filename = src.split('/').pop().split('.')[0];
-            const $card = $(`
+        if (!images.length) {
+          console.warn('⚠️ No hay imágenes en el JSON');
+          $gal.html('<p class="col-span-3 text-center">No hay imágenes para mostrar.</p>');
+          return;
+        }
+
+        images.forEach((src, index) => {
+          console.log(`🖼️ Procesando imagen[${index}]:`, src);
+
+          const filename = src.split('/').pop().split('.')[0];
+          const $card = $(`
             <div class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
               <img src="${src}" alt="${filename}" class="w-full h-64 object-cover">
               <div class="p-4">
@@ -12,9 +24,21 @@ $(function () {
               </div>
             </div>
           `);
-            $gal.append($card);
+
+          // Comprobar si la imagen existe realmente
+          $card.find('img').on('error', function() {
+            console.error('❌ Error cargando imagen:', src);
+            $(this).attr('alt', 'Imagen no disponible');
+          }).on('load', function() {
+            console.log('✅ Imagen cargada correctamente:', src);
+          });
+
+          $gal.append($card);
         });
-    }).fail(function () {
+      })
+      .fail(function (jqxhr, textStatus, error) {
+        console.error('🚨 Falló la carga de images.json:', textStatus, error);
         $('#galeria').html('<p class="col-span-3 text-center">No se pudieron cargar las imágenes.</p>');
-    });
-});
+      });
+  });
+
