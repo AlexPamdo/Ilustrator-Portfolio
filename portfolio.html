@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-    <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
-    <script src="Assets/js/jquery-3.7.1.min.js"></script>
     <title>Portafolio | Alex Pérez</title>
+    <style>
+      /* Custom scrollbar for lightbox */
+      #lightbox::-webkit-scrollbar { width: 8px; }
+      #lightbox::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 4px; }
+    </style>
 </head>
 
 <body class="bg-zinc-900 text-white flex flex-col min-h-screen">
@@ -17,15 +21,13 @@
     <!-- NAVBAR -->
     <nav class="p-4 bg-zinc-950 shadow-navbar flex gap-x-8 font-semibold justify-center">
         <a href="index.html" class="group">
-            <span
-                class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-all duration-300 ease-out">Inicio</span>
+            <span class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-all duration-300 ease-out">Inicio</span>
         </a>
         <a href="portfolio.html" class="group">
             <span class="font-bold drop-shadow-[0_0_10px_white]">Portafolio</span>
         </a>
         <a href="contact.html" class="group">
-            <span
-                class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-all duration-300 ease-out">Contacto</span>
+            <span class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-all duration-300 ease-out">Contacto</span>
         </a>
     </nav>
 
@@ -37,12 +39,14 @@
         </div>
     </header>
 
-    <!-- GALERÍA DINÁMICA -->
+    <!-- GALERÍA MASONRY -->
     <main class="flex-1">
         <section id="portfolio" class="py-12">
             <div class="container mx-auto px-4">
-                <!-- Contenedor que será llenado dinámicamente -->
-                <div id="galeria" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                <!-- Cambiado para 2 columnas en mobile, 3 en md y 4 en lg -->
+                <div id="galeria" class="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+                    <!-- Las cards se inyectan aquí -->
+                </div>
 
                 <!-- Botón Ver más (opcional) -->
                 <div class="flex justify-center mt-10">
@@ -52,55 +56,63 @@
         </section>
     </main>
 
-    <div class="cloudinary-gallery" data-cloudinary-field="gallery" data-cloudinary-cloud-name="dlzpcwmjm"
-        data-cloudinary-type="fetch" data-cloudinary-public-id="portfolio/" data-cloudinary-tags="true"
-        data-cloudinary-transformation='[{"width":300,"height":300,"crop":"fill"}]'>
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50 overflow-auto">
+      <img id="lightbox-img" src="" alt="Ampliada" class="max-w-full max-h-full m-4 rounded-lg shadow-lg">
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-zinc-950 pt-8">
-        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Sobre mí -->
-            <div>
-                <h4 class="text-lg font-bold mb-2">Sobre mí</h4>
-                <p class="text-sm opacity-70">Soy diseñador y estudiante de informática. Me encanta crear interfaces
-                    limpias y experiencias intuitivas.</p>
-            </div>
-            <!-- Enlaces -->
-            <div>
-                <h4 class="text-lg font-bold mb-2">Enlaces</h4>
-                <ul class="space-y-1">
-                    <li><a href="#portfolio" class="hover:underline">Portafolio</a></li>
-                    <li><a href="#contacto" class="hover:underline">Contacto</a></li>
-                </ul>
-            </div>
-            <!-- Redes -->
-            <div>
-                <h4 class="text-lg font-bold mb-2">Redes</h4>
-                <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:text-red-500">Twitter</a></li>
-                    <li><a href="#" class="hover:text-red-500">LinkedIn</a></li>
-                    <li><a href="#" class="hover:text-red-500">Instagram</a></li>
-                </ul>
-            </div>
-            <!-- Contacto rápido -->
-            <div>
-                <h4 class="text-lg font-bold mb-2">Contacto</h4>
-                <p class="text-sm opacity-70">alex.perez@example.com</p>
-                <p class="text-sm opacity-70">+1 234 567 890</p>
-            </div>
-        </div>
-        <div class="text-center opacity-50 mt-6">
+    <footer class="bg-zinc-950 py-6">
+        <div class="container mx-auto px-4 text-center opacity-50">
             © 2025 Alex Pérez. Todos los derechos reservados.
         </div>
-
-        <img src="Assets/img/end (1).png" class="block md:hidden">
-
     </footer>
 
+    <!-- Script jQuery para cargar imágenes y manejar lightbox -->
+    <script>
+      $(function () {
+        console.log('🔄 Iniciando carga de images.json...');
+        $.getJSON('images.json')
+          .done(function (images) {
+            console.log('✅ images.json cargado:', images);
+            const $gal = $('#galeria');
+            if (!images.length) {
+              console.warn('⚠️ No hay imágenes en el JSON');
+              $gal.html('<p class="text-center text-white">No hay imágenes para mostrar.</p>');
+              return;
+            }
+            images.forEach((src, index) => {
+              console.log(`🖼️ Procesando imagen[${index}]: ${src}`);
+              const filename = src.split('/').pop().split('.')[0];
+              const $card = $(
+                `<div class="mb-4 break-inside-avoid bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                   <img src="${src}" alt="${filename}" class="w-full h-auto object-cover">
+                   <div class="p-4">
+                     <h3 class="text-lg font-bold mb-1">${filename}</h3>
+                   </div>
+                 </div>`
+              );
+              $card.find('img')
+                .on('load', function() { console.log('✅ Imagen cargada:', src); })
+                .on('error', function() { console.error('❌ Error cargando imagen:', src); });
+              // Lightbox on click
+              $card.on('click', function() {
+                $('#lightbox-img').attr('src', src);
+                $('#lightbox').addClass('opacity-100 pointer-events-auto');
+              });
+              $gal.append($card);
+            });
+          })
+          .fail(function (jqxhr, textStatus, error) {
+            console.error('🚨 Falló la carga de images.json:', textStatus, error);
+            $('#galeria').html('<p class="text-center text-white">No se pudieron cargar las imágenes.</p>');
+          });
+        // Cerrar lightbox al clic
+        $('#lightbox').on('click', function() {
+          $(this).removeClass('opacity-100 pointer-events-auto');
+        });
+      });
+    </script>
 
-     <!-- Script jQuery para cargar imágenes desde images.json -->
-     <script src="main.js"></script>
 </body>
-
 </html>
