@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+    <script src="Assets/js/jquery-3.7.1.min.js"></script>
+    <title>Portafolio | Alex Pérez</title>
+</head>
+
+<body class="bg-zinc-900 text-white flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav class="p-4 bg-zinc-950 shadow-navbar flex gap-x-8 font-semibold justify-center">
+        <a href="index.html" class="group">
+            <span
+                class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-all duration-300 ease-out">Inicio</span>
+        </a>
+        <a href="portfolio.html" class="group">
+            <span class="font-bold drop-shadow-[0_0_10px_white]">Portafolio</span>
+        </a>
+        <a href="contact.html" class="group">
+            <span
+                class="group-hover:font-bold group-hover:drop-shadow-[0_0_10px_white] transition-all duration-300 ease-out">Contacto</span>
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <header class="bg-red-800 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="font-[Bungee] text-5xl text-white">Mi Portafolio</h1>
+            <p class="mt-2 text-zinc-200">Aquí puedes ver una selección de mis mejores trabajos</p>
+        </div>
+    </header>
+
+    <!-- GALERÍA -->
+    <main class="flex-1">
+        <section id="portfolio" class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card Template -->
+                    <!-- Repite este bloque por cada proyecto -->
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/proyecto1.jpg" alt="Proyecto 1" class="w-full h-64 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Retrato de Guilman</h3>
+                            <p class="text-sm opacity-70">Personaje de Warhammer 40k pintado con un estilo óleo.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/proyecto2.jpg" alt="Proyecto 2" class="w-full h-64 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">FanArt de Zuko</h3>
+                            <p class="text-sm opacity-70">Ilustración realizada sobre el personaje de Avatar Zuko.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-zinc-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+                        <img src="Assets/img/proyecto3.jpg" alt="Proyecto 3" class="w-full h-64 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Ilustración para Canción</h3>
+                            <p class="text-sm opacity-70">Ilustración a pedido de un artista para usarla como portada.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Agrega más tarjetas según necesites -->
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <div class="cloudinary-gallery" data-cloudinary-field="gallery" data-cloudinary-cloud-name="dlzpcwmjm"
+        data-cloudinary-type="fetch" data-cloudinary-public-id="portfolio/" data-cloudinary-tags="true"
+        data-cloudinary-transformation='[{"width":300,"height":300,"crop":"fill"}]'>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 pt-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Sobre mí -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Sobre mí</h4>
+                <p class="text-sm opacity-70">Soy diseñador y estudiante de informática. Me encanta crear interfaces
+                    limpias y experiencias intuitivas.</p>
+            </div>
+            <!-- Enlaces -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Enlaces</h4>
+                <ul class="space-y-1">
+                    <li><a href="#portfolio" class="hover:underline">Portafolio</a></li>
+                    <li><a href="#contacto" class="hover:underline">Contacto</a></li>
+                </ul>
+            </div>
+            <!-- Redes -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Redes</h4>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-red-500">Twitter</a></li>
+                    <li><a href="#" class="hover:text-red-500">LinkedIn</a></li>
+                    <li><a href="#" class="hover:text-red-500">Instagram</a></li>
+                </ul>
+            </div>
+            <!-- Contacto rápido -->
+            <div>
+                <h4 class="text-lg font-bold mb-2">Contacto</h4>
+                <p class="text-sm opacity-70">alex.perez@example.com</p>
+                <p class="text-sm opacity-70">+1 234 567 890</p>
+            </div>
+        </div>
+        <div class="text-center opacity-50 mt-6">
+            © 2025 Alex Pérez. Todos los derechos reservados.
+        </div>
+
+        <img src="Assets/img/end (1).png" class="block md:hidden">
+
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
