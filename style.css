@@ -5,3 +5,22 @@
 .shadow-draw{
     box-shadow: inset 1px 1px 50px 30px rgb(0 0 0);
 }
+
+/* Custom scrollbar for lightbox */
+#lightbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+#lightbox::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.scrollbar-hide {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
